@@ -14,6 +14,7 @@ const connect = async () => {
   } catch (error) {
     throw error;
     console.log(error);
+    console.log("error from db connection");
   }
 };
 const app = express();
