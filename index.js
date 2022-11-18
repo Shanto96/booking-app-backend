@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 dotenv.config();
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const connect = async () => {
   console.log(process.env.MONGO);
@@ -18,6 +19,11 @@ const connect = async () => {
     console.log("error from db connection");
   }
 };
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 const app = express();
 
 import authRoute from "./routes/auth.js";
