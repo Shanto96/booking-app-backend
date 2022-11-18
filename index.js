@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 
 const connect = async () => {
   try {
-    await mongoose.connect(process.env.MONGO, {
+    await mongoose.connect(`${process.env.MONGO}`, {
       useUnifiedTopology: true, // For Mongoose 5 only. Remove for Mongoose 6+
       serverSelectionTimeoutMS: 10000, // Defaults to 30000 (30 seconds)
     });
