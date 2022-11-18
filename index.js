@@ -5,6 +5,12 @@ dotenv.config();
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 const connect = async () => {
   console.log(process.env.MONGO);
   try {
@@ -19,11 +25,7 @@ const connect = async () => {
     console.log("error from db connection");
   }
 };
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+
 const app = express();
 
 import authRoute from "./routes/auth.js";
