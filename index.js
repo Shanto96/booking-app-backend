@@ -4,10 +4,10 @@ import mongoose from "mongoose";
 dotenv.config();
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
+const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
   })
 );
 
@@ -25,8 +25,6 @@ const connect = async () => {
     console.log("error from db connection");
   }
 };
-
-const app = express();
 
 import authRoute from "./routes/auth.js";
 import userRoute from "./routes/user.js";
