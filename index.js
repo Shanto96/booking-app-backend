@@ -12,7 +12,6 @@ app.use(
 );
 
 const connect = async () => {
-  console.log(process.env.MONGO);
   try {
     await mongoose.connect(`${process.env.MONGO}`, {
       useUnifiedTopology: true, // For Mongoose 5 only. Remove for Mongoose 6+
